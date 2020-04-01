@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "speechPathology"
+  "defaultProject": "speechPathology",
+  "cli": {
+    "analytics": false
+  }
 }
