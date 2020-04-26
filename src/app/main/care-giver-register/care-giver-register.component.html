@@ -2,13 +2,16 @@
   <div class= "col-lg-6 offset-lg-3 mt-4">
     <h3>CareGiver Register</h3>
     <div class="form-group">
-      <div class="form-group">
-        <label for="Character">Character</label>
-        <select id="Character" class="form-control">
-          <option selected>CareGiver</option>
-        </select>
-      </div>
       <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="form-group">
+          <label for="character">Character</label>
+          <input
+            type="text"
+            input name="character" ngModel required #character="ngModel" 
+            placeholder="Input your character: CareGiver"
+            class="form-control"
+            id="character">
+        </div>
         <div class="form-group">
           <label for="username">Username</label>
           <input
@@ -25,17 +28,23 @@
             class="form-control"
             id="Password">
         </div>
-        <div class="form-group" action="/action_page.php">
-          <label for="birthday">Birthday:</label>
-          <input type="date" id="birthday" name="birthday">
-          <input type="submit">
+        <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <input
+          type="text"
+          input name="birthday" ngModel required #birthday="ngModel"
+          placeholder="MM/DD/YYYY"
+          class="form-control"
+          id="Birthday">
         </div>
         <div class="form-group">
-          <label for="Sex">Sex</label>
-          <select id="Sex" class="form-control">
-            <option selected>Male</option>
-            <option selected>Female</option>
-          </select>
+          <label for="sex">Sex</label>
+          <input
+            type="text"
+            input name="sex" ngModel required #sex="ngModel"
+            placeholder="Male or Female"
+            class="form-control"
+            id="Sex">
         </div>
         <div class="form-group">
           <label for="Race">Race</label>

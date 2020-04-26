@@ -15,6 +15,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import {PatientsComponent} from './patients/patients.component';
+import { ApiService } from './main/services/api.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import {PatientsComponent} from './patients/patients.component';
     MatGridListModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

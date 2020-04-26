@@ -1,5 +1,8 @@
 import { Component, OnInit, NgModule } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, Routes } from '@angular/router';
+import { first } from 'rxjs/operators';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-register',
@@ -8,14 +11,25 @@ import { NgForm } from '@angular/forms';
 })
 
 export class RegisterComponent implements OnInit {
+  characters = [
+    { name: "Researcher", value: "Researcher"},
+    { name: "Therapist", value: "Therapist"},
+    { name: "Developer", value: "Developer"}
+  ];
 
-  constructor() { }
+  constructor(private apiService: ApiService ) { }
 
   ngOnInit() {
   }
 
   onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+    const registerObserver = {
+      next: x => {
+        console.log('User register: ');
+        console.log(f.value);
+      },
+      error: err => console.log('got an error: ' + err)
+    };
+    this.apiService.register(f.value).subscribe(registerObserver);
   }
 }
