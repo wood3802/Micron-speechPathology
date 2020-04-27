@@ -1,11 +1,5 @@
 {
-  "users": [
-    {
-      "username": "A",
-      "password": "123456",
-      "id": 1
-    }
-  ],
+  "users": [],
   "login": [
     {
       "username": "A",
@@ -38,6 +32,20 @@
       "FirstName": "A",
       "LastName": "A",
       "id": 2
+    },
+    {
+      "character": "CareGiver",
+      "username": "A",
+      "password": "1111111111111",
+      "birthday": "01011996",
+      "sex": "Female",
+      "Race": "Asian",
+      "Nationality": "CN",
+      "SpeechAbility": "good",
+      "Diagnosis": "good",
+      "FirstName": "A",
+      "LastName": "B",
+      "id": 3
     }
   ]
 }
