@@ -1,0 +1,40 @@
+<div class='row'>
+  <div class= "col-lg-6 offset-lg-3 mt-4">
+    <h3>Register</h3>
+    <div class="form-group"> 
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="form-group">
+          <label for="character">Character</label>
+          <input
+            type="text"
+            input name="character" ngModel required #character="ngModel" 
+            placeholder="Input your character: Researcher,Therapist,Developer"
+            class="form-control"
+            id="character">
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            input name="username" ngModel required #username="ngModel"
+            class="form-control"
+            id="Username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            input name="password" ngModel required #password="ngModel"
+            class="form-control"
+            id="Password">
+        </div>
+        <button
+          type="submit" [disabled]="f.invalid"
+          class="btn btn-primary">Create</button>
+        &nbsp;
+        <a [routerLink]="['/care-giver-register']" class="btn btn-link" routerLinkActive="active">CareGiver Register</a>
+      </form>
+
+    </div>
+  </div>
+</div>

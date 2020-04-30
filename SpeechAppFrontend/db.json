@@ -1,0 +1,51 @@
+{
+  "users": [],
+  "login": [
+    {
+      "username": "A",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "username": "A",
+      "password": "1",
+      "id": 2
+    }
+  ],
+  "register": [
+    {
+      "character": "researcher",
+      "username": "1",
+      "password": "1",
+      "id": 1
+    },
+    {
+      "character": "CareGiver",
+      "username": "A",
+      "password": "11111",
+      "birthday": "01011996",
+      "sex": "Female",
+      "Race": "Asian",
+      "Nationality": "CN",
+      "SpeechAbility": "good",
+      "Diagnosis": "good",
+      "FirstName": "A",
+      "LastName": "A",
+      "id": 2
+    },
+    {
+      "character": "CareGiver",
+      "username": "A",
+      "password": "1111111111111",
+      "birthday": "01011996",
+      "sex": "Female",
+      "Race": "Asian",
+      "Nationality": "CN",
+      "SpeechAbility": "good",
+      "Diagnosis": "good",
+      "FirstName": "A",
+      "LastName": "B",
+      "id": 3
+    }
+  ]
+}

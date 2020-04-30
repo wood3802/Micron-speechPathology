@@ -1,0 +1,34 @@
+<div class ="center">
+  <ul class="patients">
+    <button mat-raised-button class ="filterbtn">Filter</button>
+    <li *ngFor="let patient of patients"
+        [class.selected]="patient === selectedPatient"
+        (click)="onSelect(patient)">
+      <span class="badge">ID: </span> {{patient.id}}
+    </li>
+  </ul>
+
+  <div class="display" *ngIf="selectedPatient">
+    <h2>{{selectedPatient.id}} Details:</h2>
+    <div><span>id: </span>{{selectedPatient.id}}</div>
+    <div><span>birthday: </span>{{selectedPatient.birthday}}</div>
+    <div><span>sex: </span>{{selectedPatient.sex}}</div>
+    <div><span>race: </span>{{selectedPatient.race}}</div>
+    <div><span>nationality: </span>{{selectedPatient.nationality}}</div>
+    <div><span>speech ability: </span>{{selectedPatient.speech_ability}}</div>
+    <div><span>diagnosis: </span>{{selectedPatient.diagnosis}}</div>
+    <div><span>therapist: </span>{{selectedPatient.therapist_id}}</div>
+    <div><span>caregiver: </span>{{selectedPatient.caregiver_id}}</div>
+    <form class ="downloadbtn">
+      <mat-form-field>
+        <mat-label>Select recording</mat-label>
+        <mat-select [(ngModel)]="selectedRecording" name="recording">
+          <mat-option *ngFor="let recording of recordings" [value]="recording.name">
+            {{recording.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <button mat-raised-button class ="btn">Download Patient Data</button>
+  </div>
+</div>
