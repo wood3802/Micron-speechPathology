@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PatientsComponent } from './patients/patients.component';
 import { AuthHtppInterceptorService } from './main/services/auth-interceptor.service'
+import { UploadPageComponent } from './upload-page/upload-page.component';
 
 // ui imports
 import { FormsModule } from '@angular/forms';
@@ -22,7 +23,8 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [
     AppComponent,
     PatientsComponent,
-    DashboardComponent
+    DashboardComponent,
+    UploadPageComponent
   ],
   imports: [
     BrowserModule,
