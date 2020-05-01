@@ -17,7 +17,7 @@ export class ColumnComponent implements OnInit {
     // on route change to '/login', set the variable showHead to false
       router.events.forEach((event) => {
         if (event instanceof NavigationStart) {
-          if (event['url'] == '/dashboard') {
+          if (event['url'] == '/dashboard' || event['url'] == '/upload' || event['url'] == '/patient') {
             this.showHead = false;
           } else {
             this.showHead = true;
