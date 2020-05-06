@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { User } from '../../models/users'
-import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
+import { Patient } from '../../models/patients'
+import { environment } from 'src/environments/environment';
 
 const API_URL = environment.apiUrl;
 
@@ -11,14 +12,22 @@ const API_URL = environment.apiUrl;
   })
 
 export class ApiService {
-  loginUrl = "http://localhost:8080/";
-  currentPassword: any;
-  currentUser: User;
-  currentCharacter: any;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  register(model: any) {
-    return this.http.post(this.loginUrl + "register", model);
+  // posts user information for regular users
+  //TODO: pass as a model rather than raw fields
+  register(usertype, username, password, fname, lname) {
+    return this.http.post<any>(""+API_URL+"/register", {usertype, username, password, fname, lname})
+    .pipe(
+      map(Data => {
+        return Data;
+      })
+    );
+  }
+
+  // posts patient information from the caregiver's page
+  patientRegister(model: Patient) {
+    return this.http.post(""+API_URL+"/patientregister", model);
   }
   
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { NgForm, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from '../../models/users'
 import { Router, Routes } from '@angular/router';
-import { first } from 'rxjs/operators';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -17,19 +17,27 @@ export class RegisterComponent implements OnInit {
     { name: "Developer", value: "Developer"}
   ];
 
-  constructor(private apiService: ApiService ) { }
+  constructor(private router: Router, private apiService: ApiService) {
+  }
 
   ngOnInit() {
   }
 
+  //TODO: use model rather than raw fields
   onSubmit(f: NgForm) {
-    const registerObserver = {
-      next: x => {
-        console.log('User register: ');
-        console.log(f.value);
+    this.apiService.register(
+      f.controls['usertype'].value,
+      f.controls['username'].value,
+      f.controls['password'].value,
+      f.controls['fname'].value,
+      f.controls['lname'].value
+    )
+    .subscribe(
+      data => {
+        this.router.navigate(['/login'])
       },
-      error: err => console.log('got an error: ' + err)
-    };
-    this.apiService.register(f.value).subscribe(registerObserver);
+      error => {
+        console.error;
+    });
   }
 }

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CloudUploadService } from './cloud-upload.service';
+import { CloudUploadService } from './cloud-upload-service';
 
 describe('CloudUploadService', () => {
   let service: CloudUploadService;

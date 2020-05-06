@@ -18,6 +18,7 @@ export class AuthenticationService {
       .post<any>(""+API_URL+"/authenticate", { username, password })
       .pipe(
         map(userData => {
+          //TODO: Consider not using session storage for this information as it can be edited by the client
           sessionStorage.setItem("username", username);
           sessionStorage.setItem("usertype", userData.usertype);
           let tokenStr = "Bearer " + userData.token;

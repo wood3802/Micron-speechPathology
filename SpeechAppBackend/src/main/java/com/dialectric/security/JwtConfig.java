@@ -51,7 +51,7 @@ public class JwtConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable()
                 // skip authentication on specified calls here
-                .authorizeRequests().antMatchers("/authenticate", "/signin")
+                .authorizeRequests().antMatchers("/authenticate", "/register")
                 // enable authentication on everything else
                 .permitAll().antMatchers(HttpMethod.OPTIONS, "/**")
                 .permitAll().anyRequest().authenticated().and().

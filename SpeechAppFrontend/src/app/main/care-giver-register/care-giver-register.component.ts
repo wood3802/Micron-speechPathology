@@ -1,7 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { NgForm, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, Routes } from '@angular/router';
-import { first } from 'rxjs/operators';
 import { ApiService } from '../services/api.service';
 @Component({
   selector: 'app-care-giver-register',
@@ -23,7 +21,7 @@ export class CareGiverRegisterComponent implements OnInit {
       },
       error: err => console.log('got an error: ' + err)
     };
-    this.apiService.register(f.value).subscribe(registerObserver);
+    this.apiService.patientRegister(f.value).subscribe(registerObserver);
     //console.log(f.value);  // { first: '', last: '' }
     //console.log(f.valid);  // false
   }

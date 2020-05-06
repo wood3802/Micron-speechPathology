@@ -3,7 +3,6 @@ package com.dialectric.models;
 // model for Researcher, Caregiver, Therapist, or Developer tables in DB
 public class User {
 
-    private int id;
     private String usertype;
     private String fname;
     private String lname;
@@ -19,9 +18,6 @@ public class User {
         this.password = "";
     }
 
-    public void setId(int id) { this.id = id; }
-    public int getId() { return id; }
-
     public void setUsertype(String usertype) { this.usertype = usertype; }
     public String getUsertype() { return usertype; }
 
@@ -34,6 +30,6 @@ public class User {
     public void setUsername(String username) { this.username = username; }
     public String getUsername() { return username; }
 
-    public void setpassword(String password) { this.password = password; }
-    public String getpassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+    public String getPassword() { return password; }
 }

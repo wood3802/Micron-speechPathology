@@ -48,7 +48,7 @@ public class DBWrapper{
 	return connection;
     }
 
-    public static int CreateAccount(Connection con, String username, String password, String DatabaseUsername, String databaseName) throws IOException, SQLException
+    public static int CreateAccount(Connection con, String username, String password, String fname, String lname, String DatabaseUsername, String databaseName) throws IOException, SQLException
     {
 	String query = null;
 	Statement statement = con.createStatement();
@@ -60,13 +60,6 @@ public class DBWrapper{
 	boolean p;
 
 	try{
-	    InputStreamReader isr = new InputStreamReader(System.in);
-	    BufferedReader br = new BufferedReader(isr);
-	    System.out.println("First Name: ");
-	    String fname = br.readLine();
-	    System.out.println("Last Name: ");
-	    String lname = br.readLine();
-
 	    switch(AccountType)
 		{
 		case "Researcher":
@@ -192,7 +185,7 @@ public class DBWrapper{
 	    System.out.println(query);
 	    System.out.println("Created!");
 	}
-	catch(IOException | SQLException e) {
+	catch(SQLException e) {
 	    e.printStackTrace();
 	    return -1;
         } finally {

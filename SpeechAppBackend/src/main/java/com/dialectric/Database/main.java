@@ -37,9 +37,13 @@ class main extends DBWrapper{
 		    	String username = br.readLine();
 		    	System.out.println("Password: ");
 		    	String password = br.readLine();
+				System.out.println("First Name: ");
+				String fname = br.readLine();
+				System.out.println("Last Name: ");
+				String lname = br.readLine();
 
 		    	String computed_hash = db.hashPassword(password);
-		    	db.CreateAccount(connection, username, computed_hash, "SpeechPathology", "testDB_2");
+		    	db.CreateAccount(connection, username, computed_hash, fname, lname, "SpeechPathology", "testDB_2");
 
 		    	//if they are a new Caregiver they need to fill out a section in the subject table
 				if(accountType.equals("CareGiver")) {

@@ -8,9 +8,9 @@ import { MainModule } from './main/main.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PatientsComponent } from './patients/patients.component';
+import { PatientsComponent } from './main/patients/patients.component';
 import { AuthHtppInterceptorService } from './main/services/auth-interceptor.service'
-import { UploadPageComponent } from './upload-page/upload-page.component';
+import { UploadPageComponent } from './main/upload-page/upload-page.component';
 
 // ui imports
 import { FormsModule } from '@angular/forms';
